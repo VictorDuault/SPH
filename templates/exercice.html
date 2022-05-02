@@ -1,11 +1,37 @@
 {% extends 'layout.html' %}
 
 {% block body%}
-   <div class='container'>Exercices:</div>
-   <div class='parent'>
-      <div class='child'>Liste des exercices:
-         {% block exoliste %} {% endblock %}
+<div class='container'>
+   <div class="row">
+      <div class ='col-sm-3 list-group'>
+         <br>
+         <h4 class="list-group-item-heading">Exercices</h4>
+         {% for i in range(0, exo|length)%}
+            <a class="list-group-item" href="{{path}}?n={{i+1}}">Exercice {{i+1}}</a>
+         {% endfor %}
       </div>
-      <div class='child'>Test</div>
-    </div> 
+
+      <div class='col-sm-9'>
+         <div class="container">
+            <br>
+            {% if n<=exo|length + 1 and n>0 %}
+               <h4>Exercice {{n}}: {{exo[n-1][0]}}</h4>
+               <p>{{exo[n-1][3]}}</p>
+               <br>
+               <form>
+               <div class="row">
+                  <div class="mb-2 col-sm-3">
+                     <label for="reponse" class="sr-only">Réponse</label>
+                     <input type="text" id="reponse" class="form-control" placeholder="Réponse">
+                  </div>
+                  <div class="mb-2 col-sm-1">
+                     <button type="submit" class="btn btn-primary mb-2">Valider</button>
+                  </div>
+               </div>
+               </form>
+            {% endif %}
+         </div>
+      </div> 
+   </div>
+</div>
 {% endblock %}

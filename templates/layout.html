@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='navbar.css') }}">
     <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='style.css') }}">
 </head>
@@ -9,7 +10,7 @@
 
     <header class="site-header">
         <div class="wrapper site-header__wrapper">
-          <a href="#" class="brand">Nom du site</a>
+          <a href="/" class="brand">Nom du site</a>
           <nav class="nav">
             <button class="nav__toggle" aria-expanded="false" type="button">
               menu
@@ -21,12 +22,21 @@
                   <i class="fa fa-caret-down"></i>
                 </button>
                 <div class="dropdown-content">
-                  <a href="projectionvectorielle" class="dropdown-item">Projection vectorielle</a>
+                  <a href="/c/projectionvectorielle" class="dropdown-item">Projection vectorielle</a>
                   <a href="#" class="dropdown-item">Introduction aux lois de Newton</a>
                   <a href="#" class="dropdown-item">Statique des fluides</a>
                 </div>
               </div></li>
-              <li class="nav__item"><a href="exercices">Exercices</a></li>
+              <li class="nav__item"><div class="dropdown">
+                <button class="dropbtn">Exercices
+                  <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                  <a href="/ex/projectionvectorielle" class="dropdown-item">Projection vectorielle</a>
+                  <a href="/ex/newton" class="dropdown-item">Introduction aux lois de Newton</a>
+                  <a href="/ex/statiquedesfluides" class="dropdown-item">Statique des fluides</a>
+                </div>
+              </div></li>
               <li class="nav__item"><a href="#">Problèmes</a></li>
               <li class="nav__item"><a href="#">Contact</a></li>
             </ul>
