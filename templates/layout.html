@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='navbar.css') }}">
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='style.css') }}">
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="wrapper site-header__wrapper">
+          <a href="#" class="brand">Nom du site</a>
+          <nav class="nav">
+            <button class="nav__toggle" aria-expanded="false" type="button">
+              menu
+            </button>
+            <ul class="nav__wrapper" style="list-style: none;">
+              <li class="nav__item">
+                <div class="dropdown">
+                <button class="dropbtn">Cours
+                  <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                  <a href="projectionvectorielle" class="dropdown-item">Projection vectorielle</a>
+                  <a href="#" class="dropdown-item">Introduction aux lois de Newton</a>
+                  <a href="#" class="dropdown-item">Statique des fluides</a>
+                </div>
+              </div></li>
+              <li class="nav__item"><a href="exercices">Exercices</a></li>
+              <li class="nav__item"><a href="#">Problèmes</a></li>
+              <li class="nav__item"><a href="#">Contact</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+
+{% block body %} {% endblock %}
+
+</body>
+</html>
