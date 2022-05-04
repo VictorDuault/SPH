@@ -1,0 +1,29 @@
+{% extends 'layout.html' %}
+{% block body %}
+    <div class="container vertical-center">
+        <form method="POST" action="">
+            <div class="col-sm-5 offset-sm-4 text-center">
+            <h4>S'enregistrer</h4>
+            {{ form.csrf_token }}
+            {{ form.email }}
+            {{ form.username }}
+            {{ form.password }}
+            {{ form.confirm }}
+            {% for error in form.errors %}
+                <div class="text-danger mb-2">{{ form.errors[error][0] }}</div>
+            {% endfor %}
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    {% for message in messages %}
+                    <div class="text-danger mb-2">
+                        {{ message }}
+                    </div>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+            {{ form.submit }}
+        </form>
+
+        <div class="text-center"><a class="btn btn-info mb-2" role='button' href="/login">Vous avez déjà un compte?</a></div>
+    </div>
+{% endblock %}

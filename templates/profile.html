@@ -1,0 +1,8 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+    <h4 class="text-center">Bienvenue, {{name}}</h4>
+    <form method="POST" action="/logout">
+    <input class="text-center btn btn-danger" type='submit' name="logout" value="Se Déconnecter">
+    </form>
+{% endblock %}

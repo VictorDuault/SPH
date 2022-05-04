@@ -50,20 +50,10 @@
 a:hover { 
     text-decoration: none; 
 }
-h1 {
-    font-size: 1.5em;
-}
-.parent {
-    border: 1px solid black;
-    margin: 1rem;
-    padding: 2rem 2rem;
-    text-align: left;
-    justify-content: left;
-  }
-  .child {
-    display: inline-block;
-    border: 1px solid red;
-    padding: 2rem 1rem ; 
-    margin: 20px;
-    vertical-align: middle;
+.vertical-center {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
   }

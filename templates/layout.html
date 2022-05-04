@@ -7,10 +7,10 @@
     <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='style.css') }}">
 </head>
 <body>
-
     <header class="site-header">
         <div class="wrapper site-header__wrapper">
           <a href="/" class="brand">Nom du site</a>
+
           <nav class="nav">
             <button class="nav__toggle" aria-expanded="false" type="button">
               menu
@@ -38,7 +38,11 @@
                 </div>
               </div></li>
               <li class="nav__item"><a href="#">Problèmes</a></li>
-              <li class="nav__item"><a href="#">Contact</a></li>
+              {% if current_user.is_authenticated %}
+              <li class="nav__item"><a href="/profil">Profil</a></li>
+              {% else %}
+              <li class="nav__item"><a href="/register">S'identifier</a></li>
+              {% endif %}
             </ul>
           </nav>
         </div>
